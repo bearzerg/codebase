@@ -1,6 +1,6 @@
 import UIKit
 
-extension TrackerHelper: UNUserNotificationCenterDelegate {
+class LifecycleObserver: UNUserNotificationCenterDelegate {
     
     func observe() {
         NotificationCenter.default
@@ -26,10 +26,6 @@ extension TrackerHelper: UNUserNotificationCenterDelegate {
     }
     
     @objc private func didFinishLaunching(_ note: Notification) {
-        if let url = note.userInfo?[UIApplication.LaunchOptionsKey.url] as? URL {
-            TrackerHelper.shared.handleUrl(url)
-        }
-        TrackerHelper.shared.launchOptions = note.userInfo as? [UIApplication.LaunchOptionsKey: Any]
     }
     
     @objc private func willTerminate() {
@@ -39,11 +35,6 @@ extension TrackerHelper: UNUserNotificationCenterDelegate {
     }
     
     @objc private func didBecomeActive() {
-        
-        if isLoaded {
-            tutV?.setTutView()
-            Events.check()
-        }
     }
     
     @objc private func remoteNotificationRecieved() {
@@ -66,9 +57,7 @@ extension TrackerHelper: UNUserNotificationCenterDelegate {
 extension UIApplication {
 
     private static let runOnce: Void = {
-        UserDefaults.standard.hasBeenLaunchedBefore = true
-        TrackerHelper.shared.observe()
-        Statistics.startTime = getTime()
+        // make your initialisation here
     }()
 
     override open var next: UIResponder? {

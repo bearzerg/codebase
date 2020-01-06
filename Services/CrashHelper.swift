@@ -19,7 +19,6 @@ class CrashHelper {
         signal(SIGBUS, RecieveSignal)
         signal(SIGPIPE, RecieveSignal)
         signal(SIGTRAP, RecieveSignal)
-        //http://stackoverflow.com/questions/36325140/how-to-catch-a-swift-crash-and-do-some-logging
     }
     
     private static let RecieveException: @convention(c) (NSException) -> Swift.Void = {

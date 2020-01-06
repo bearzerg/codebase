@@ -1,14 +1,11 @@
 import UIKit
 
-public var isFirstLaunch: Bool {
-    return !UserDefaults.standard.hasBeenLaunchedBefore
-}
-public var isLoaded: Bool {
-    return UserDefaults.standard.linkCash != nil
-}
-
-func ifDebug(_ completion: () -> ()) {
+func ifDebug(_ completion: () -> (),
+             funcName: String = #function,
+             fileName: String = #file,
+             lineNumber: Int = #line) {
     #if DEBUG
+    print("\(fileName).\(funcName)-\(lineNumber) at \(getTime()):\n")
     completion()
     #endif
 }

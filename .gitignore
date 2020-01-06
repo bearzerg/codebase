@@ -1,169 +1,104 @@
+#####
+# OS X temporary files that should never be committed
+.DS_Store
+*.swp
+*.lock
+profile
 
-# Created by https://www.gitignore.io/api/swift,xcode,objective-c,osx
-# Edit at https://www.gitignore.io/?templates=swift,xcode,objective-c,osx
+#####
+# DotEnv files
+.env
 
-### Objective-C ###
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+####
+# Xcode temporary files that should never be committed
+*~.nib
 
-## Build generated
-build/
-Build/
-Index/
-DerivedData/
-
-## Various settings
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-xcuserdata/
-
-## Other
-*.moved-aside
-*.xccheckout
-*.xcscmblueprint
-
-## Obj-C/Swift specific
+####
+# Objective-C/Swift specific
 *.hmap
 *.ipa
-*.dSYM.zip
-*.dSYM
 
+####
+# Xcode build files
+DerivedData/
+build/
+Build/
+Builds/
+Index/
+
+#####
+# Xcode private settings (window sizes, bookmarks, breakpoints, custom executables, smart groups)
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+
+####
+# Xcode 4
+xcuserdata
+!xcschemes
+# Xcode 4
+*.moved-aside
+
+####
+# XCode 4 workspaces - more detailed
+!xcshareddata
+!default.xcworkspace
+*.xcworkspacedata
+
+
+####
+# Xcode 5
+*.xccheckout
+*.xcuserstate
+
+####
+# Xcode 7
+*.xcscmblueprint
+
+####
+# AppCode
+.idea/
+
+####
+# Other Xcode files
+profile
+*.hmap
+*.ipa
+
+####
 # CocoaPods
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-# Pods/
-# Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
+Pods/
+!Podfile
+!Podfile.lock
 
+####
 # Carthage
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
+Carthage/Build.rbenv-vars
+!Cartfile
+!Cartfile.private
+!Cartfile.resolved
 
-Carthage/Build
+####
+# Fastlane
+# Temporary profiling data
+/fastlane/report.xml
+# Deliver temporary error output
+/fastlane/Error*.png
+# Deliver temporary preview output
+/fastlane/Preview.html
+# Snapshot generated screenshots
+/fastlane/screenshots/*/*-portrait.png
+/fastlane/screenshots/*/*-landscape.png
+/fastlane/screenshots/screenshots.html
+# Frameit generated screenshots
+/fastlane/screenshots/*/*-portrait_framed.png
+/fastlane/screenshots/*/*-landscape_framed.png
 
-# fastlane
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
-
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output
-
-# Code Injection
-# After new code Injection tools there's a generated folder /iOSInjectionProject
-# https://github.com/johnno1962/injectionforxcode
-
-iOSInjectionProject/
-
-### Objective-C Patch ###
-
-### OSX ###
-# General
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Icon must end with two \r
-Icon
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-### Swift ###
-# Xcode
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-
-
-
-
-
-## Playgrounds
-timeline.xctimeline
-playground.xcworkspace
-
-# Swift Package Manager
-# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
-# Package.resolved
-.build/
-# Add this line if you want to avoid checking in Xcode SPM integration.
-# .swiftpm/xcode
-
-# CocoaPods
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-# Pods/
-# Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
-
-# Carthage
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
-
-# Accio dependency management
-Dependencies/
-.accio/
-
-# fastlane
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
-
-
-# Code Injection
-# After new code Injection tools there's a generated folder /iOSInjectionProject
-# https://github.com/johnno1962/injectionforxcode
-
-
-### Xcode ###
-# Xcode
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-
-## User settings
-
-## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
-
-## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
-
-## Xcode Patch
-*.xcodeproj/*
-!*.xcodeproj/project.pbxproj
-!*.xcodeproj/xcshareddata/
-!*.xcworkspace/contents.xcworkspacedata
-/*.gcno
-
-### Xcode Patch ###
-**/xcshareddata/WorkspaceSettings.xcsettings
-
-# End of https://www.gitignore.io/api/swift,xcode,objective-c,osx
+####
+# rbenv
+.rbenv-vars
